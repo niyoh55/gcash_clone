@@ -68,8 +68,6 @@ const LoginScreen = ({ navigation, route }) => {
   };
 
   useEffect(() => {
-    console.log(pin.join(""));
-    console.log(user?.MPIN);
     if (pin.length === 4 && pin.join("") == user?.MPIN) {
       //Alert.alert("Logging In", "Loading...");
       setModalVisible(true);
