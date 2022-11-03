@@ -1,23 +1,11 @@
 import React, { useCallback, useEffect } from "react";
-import {
-  Button,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  ScrollView,
-} from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Colors from "../../../Components/Colors";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import Octicons from "react-native-vector-icons/Octicons";
-import FAIcons from "react-native-vector-icons/FontAwesome5";
 import { useFonts } from "expo-font";
 import { hideAsync, preventAutoHideAsync } from "expo-splash-screen";
-import HomeButtonsDisplay from "../../../Components/HomeScreen/HomeButtonsDisplay";
 import { useIsFocused } from "@react-navigation/native";
-import Ionicon from "react-native-vector-icons/Ionicons";
+import TransactionItem from "./Transactions/TransactionItem";
 
 const TransactionsScreen = () => {
   const isFocused = useIsFocused();
@@ -42,72 +30,6 @@ const TransactionsScreen = () => {
   if (!fontsLoaded) {
     return null;
   }
-
-  const InboxItem = () => (
-    <View
-      style={{
-        flexDirection: "row",
-        justifyContent: "space-between",
-        paddingVertical: 10,
-        borderBottomColor: Colors.bottomBorderHome,
-        borderBottomWidth: 2,
-        paddingHorizontal: 20,
-      }}
-    >
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <View>
-          <Text
-            style={{
-              fontSize: 14,
-              color: Colors.inboxTextTitle,
-              fontWeight: "600",
-              fontFamily: "DM-Sans",
-            }}
-          >
-            Send Money
-          </Text>
-          <Text
-            style={{
-              fontSize: 13,
-              color: Colors.inboxSubTitle,
-              fontWeight: "600",
-              fontFamily: "DM-Sans",
-            }}
-          >
-            2022-09-27 | 12:00:00
-          </Text>
-        </View>
-      </View>
-      <View style={{ justifyContent: "center" }}>
-        <View>
-          <Text
-            style={{
-              fontSize: 14,
-              color: Colors.transactionsCurrencyText,
-              fontWeight: "600",
-              fontFamily: "DM-Sans",
-              textAlign: "right",
-            }}
-          >
-            -150.00
-          </Text>
-          <Pressable onPress={() => console.log("pressed details")}>
-            <Text
-              style={{
-                fontSize: 13,
-                color: Colors.transactionsDetailsButton,
-                fontWeight: "600",
-                fontFamily: "DM-Sans",
-                textAlign: "right",
-              }}
-            >
-              Details
-            </Text>
-          </Pressable>
-        </View>
-      </View>
-    </View>
-  );
 
   return (
     <SafeAreaView style={{ flex: 1 }} edges={["bottom", "left", "right"]}>
@@ -152,30 +74,22 @@ const TransactionsScreen = () => {
         </View>
         <ScrollView scrollEnabled>
           <View style={styles.contentContainer}>
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
-            <InboxItem />
+            <TransactionItem />
+            <TransactionItem />
+            <TransactionItem />
+            <TransactionItem />
+            <TransactionItem />
+            <TransactionItem />
+            <TransactionItem />
+            <TransactionItem />
+            <TransactionItem />
+            <TransactionItem />
+            <TransactionItem />
+            <TransactionItem />
+            <TransactionItem />
+            <TransactionItem />
+            <TransactionItem />
+            <TransactionItem />
           </View>
         </ScrollView>
       </View>

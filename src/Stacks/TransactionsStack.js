@@ -1,8 +1,9 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Pressable } from "react-native";
 import Colors from "../../Components/Colors";
-import InboxDetail from "../Screens/Inbox/InboxDetail/InboxDetail";
-import SampleScreen2 from "../Screens/SampleScreen2";
+import TransactionDetails from "../Screens/Transactions/TransactionDetails";
 import TransactionsScreen from "../Screens/Transactions/Transactions";
+import Ionicon from "react-native-vector-icons/Ionicons";
 
 const TransactionStack = () => {
   const Stack = createNativeStackNavigator();
@@ -16,7 +17,7 @@ const TransactionStack = () => {
           headerLeft: () => {
             return (
               navigation.canGoBack() &&
-              route.name !== "Inbox" && (
+              route.name !== "Transactions" && (
                 <Pressable
                   onPress={() => navigation.goBack()}
                   style={{ justifyContent: "center", alignItems: "center" }}
@@ -30,14 +31,14 @@ const TransactionStack = () => {
               )
             );
           },
-          animation: "fade_from_bottom",
+          animation: "slide_from_right",
           statusBarColor: Colors.balanceColor,
           statusBarStyle: "light",
         };
       }}
     >
       <Stack.Screen
-        name="Inbox"
+        name="Transactions"
         component={TransactionsScreen}
         options={{
           headerShown: true,
@@ -55,11 +56,11 @@ const TransactionStack = () => {
         }}
       />
       <Stack.Screen
-        name="inboxDetail"
-        component={InboxDetail}
+        name="TransactionDetails"
+        component={TransactionDetails}
         options={{
           headerShown: true,
-          title: "Inbox Detail",
+          title: "Transaction Detail",
           headerTitleAlign: "center",
           headerTitleStyle: { fontSize: 16 },
           headerTintColor: "white",
@@ -72,7 +73,6 @@ const TransactionStack = () => {
           },
         }}
       />
-      <Stack.Screen name="sample2" component={SampleScreen2} />
     </Stack.Navigator>
   );
 };

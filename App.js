@@ -36,7 +36,7 @@ export default function App() {
               iconName = focused ? "mail" : "mail-outline";
             } else if (route.name === "TransactionsStack") {
               iconName = focused ? "list-sharp" : "list-outline";
-            } else if (route.name === "Profile") {
+            } else if (route.name === "ProfileStack") {
               iconName = focused ? "person" : "person-outline";
             }
 
@@ -119,7 +119,7 @@ export default function App() {
           }}
         />
         <Tab.Screen
-          name="Profile"
+          name="ProfileStack"
           component={ProfileStack}
           options={{
             headerShown: false,

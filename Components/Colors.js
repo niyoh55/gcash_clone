@@ -19,6 +19,9 @@ const Colors = {
   //Transactions
   transactionsCurrencyText: "#cdcdcd",
   transactionsDetailsButton: "#69a3ca",
+
+  //Profile
+  profileText: "#f8fbf4",
 };
 
 export default Colors;

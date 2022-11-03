@@ -4,7 +4,7 @@ import SampleScreen2 from "../Screens/SampleScreen2";
 import Home from "../Screens/Home/Home";
 import Colors from "../../Components/Colors";
 
-const HomeStack = () => {
+const HomeStack = ({ navigation }) => {
   const Stack = createNativeStackNavigator();
 
   return (

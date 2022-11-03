@@ -10,6 +10,7 @@ import { useFonts } from "expo-font";
 import { hideAsync, preventAutoHideAsync } from "expo-splash-screen";
 import Colors from "../Colors";
 import { useNavigation } from "@react-navigation/native";
+import PressableIcon from "./PressableIcon";
 
 const HomeButtonsDisplay = () => {
   const navigation = useNavigation();
@@ -27,35 +28,11 @@ const HomeButtonsDisplay = () => {
     return null;
   }
 
-  const TextDisplay = ({ text }) => (
-    <Text
-      style={{
-        fontFamily: "DM-Sans",
-        color: Colors.iconColor,
-        fontSize: 13,
-      }}
-    >
-      {text}
-    </Text>
-  );
-
-  const PressableIcon = ({ iconName }) => (
-    <Pressable
-      android_ripple={{ color: Colors.balanceColor, borderless: true }}
-      onPress={() => navigation.navigate("sample1")}
-    >
-      <FAIcons name={iconName} size={40} color={Colors.iconColor} />
-    </Pressable>
-  );
-
   return (
     <View
       style={{
         flex: 1,
         paddingVertical: 10,
-        //backgroundColor: "red",
-        //justifyContent: "center",
-        //alignItems: "center",
       }}
       onLayout={onLayoutRootView}
     >
@@ -68,23 +45,12 @@ const HomeButtonsDisplay = () => {
           alignItems: "center",
         }}
       >
-        <View style={{ alignItems: "center" }}>
-          <PressableIcon iconName={"money-bill-wave"} />
-          <TextDisplay text="Send" />
-        </View>
-        <View style={{ alignItems: "center" }}>
-          <PressableIcon iconName={"money-bill-wave"} />
-          <TextDisplay text="Load" />
-        </View>
-        <View style={{ alignItems: "center" }}>
-          <PressableIcon iconName={"money-bill-wave"} />
-          <TextDisplay text="Transfer" />
-        </View>
-        <View style={{ alignItems: "center" }}>
-          <PressableIcon iconName={"money-bill-wave"} />
-          <TextDisplay text="Bills" />
-        </View>
+        <PressableIcon iconName={"money-bill-wave"} text="Send" />
+        <PressableIcon iconName={"money-bill-wave"} text="Load" />
+        <PressableIcon iconName={"money-bill-wave"} text="Transfer" />
+        <PressableIcon iconName={"money-bill-wave"} text="Bills" />
       </View>
+
       <View
         style={{
           flexDirection: "row",
@@ -93,23 +59,12 @@ const HomeButtonsDisplay = () => {
           alignItems: "center",
         }}
       >
-        <View style={{ alignItems: "center" }}>
-          <PressableIcon iconName={"money-bill-wave"} />
-          <TextDisplay text="Borrow" />
-        </View>
-        <View style={{ alignItems: "center" }}>
-          <PressableIcon iconName={"money-bill-wave"} />
-          <TextDisplay text="GSave" />
-        </View>
-        <View style={{ alignItems: "center" }}>
-          <PressableIcon iconName={"money-bill-wave"} />
-          <TextDisplay text="GInsure" />
-        </View>
-        <View style={{ alignItems: "center" }}>
-          <PressableIcon iconName={"money-bill-wave"} />
-          <TextDisplay text="GInvest" />
-        </View>
+        <PressableIcon iconName={"money-bill-wave"} text="Borrow" />
+        <PressableIcon iconName={"money-bill-wave"} text="GSave" />
+        <PressableIcon iconName={"money-bill-wave"} text="GInsure" />
+        <PressableIcon iconName={"money-bill-wave"} text="GInvest" />
       </View>
+
       <View
         style={{
           flexDirection: "row",
@@ -118,25 +73,25 @@ const HomeButtonsDisplay = () => {
           alignItems: "center",
         }}
       >
-        <View style={{ alignItems: "center" }}>
-          <PressableIcon iconName={"money-bill-wave"} />
-          <TextDisplay text="GLife" />
-        </View>
-        <View style={{ alignItems: "center" }}>
-          <PressableIcon iconName={"money-bill-wave"} />
-          <TextDisplay text="A+ Rewards" />
-        </View>
-        <View style={{ alignItems: "center" }}>
-          <PressableIcon iconName={"money-bill-wave"} />
-          <TextDisplay text="GForest" />
-        </View>
+        <PressableIcon iconName={"money-bill-wave"} text="GLife" />
+        <PressableIcon iconName={"money-bill-wave"} text="A+ Rewards" />
+        <PressableIcon iconName={"money-bill-wave"} text="GForest" />
+
         <View style={{ alignItems: "center" }}>
           <MaterialCommIcons
             name="dots-horizontal"
             size={40}
             color={Colors.iconColor}
           />
-          <TextDisplay text="View All" />
+          <Text
+            style={{
+              fontFamily: "DM-Sans",
+              color: Colors.iconColor,
+              fontSize: 13,
+            }}
+          >
+            View All
+          </Text>
         </View>
       </View>
     </View>
